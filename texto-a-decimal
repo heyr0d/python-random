@@ -1,0 +1,9 @@
+def texto_a_hexadecimal(texto):
+  hexadecimal = ""
+  for c in texto:
+    hexadecimal += hex(ord(c))[2:]
+  return hexadecimal
+
+texto = input("Ingresa el texto a convertir: ")
+hexadecimal = texto_a_hexadecimal(texto)
+print(f"El texto {texto} en hexadecimal es: {hexadecimal}")
