@@ -1,0 +1,19 @@
+# Este código muestra cómo generar una clave pública y una clave privada, y cómo utilizar la clave privada para
+# firmar un mensaje y la clave pública para verificar la firma
+
+import ecdsa
+"""
+
+# Crear una clave privada y una clave pública
+priv_key = ecdsa.SigningKey.generate(curve=ecdsa.NIST256p)
+pub_key = priv_key.get_verifying_key()
+
+# Mensaje a firmar
+message = b"Hola, soy un mensaje!"
+
+# Firmar el mensaje
+signature = priv_key.sign(message)
+
+# Verificar la firma
+assert pub_key.verify(signature, message)
+print("La firma es válida.")
